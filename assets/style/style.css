@@ -1,0 +1,499 @@
+:root{
+    --text-color-primary: #c72092;
+    --text-color-secondary: #6c14d0;
+    --bg-color-primary: white;
+    --box-shadow-primary: 0 0 8px rgba(0,0,0,0.6);
+    --box-shadow-secondary: 0 0 8px rgb(90, 79, 195);
+    --btn_bg-color: linear-gradient(to right, #6c14d0 , #c72092);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+section{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 1s;
+
+}
+@media(prefers-reduced-motion) {
+    .hidden{
+        transition: none;
+    }
+}
+
+a:hover{
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+#main_header{
+    margin-top: 100px;
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-image: url(../image/bg1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+}
+
+#main_header #main_header_content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+}
+
+#main_header #main_header_content_back{
+    background-color: rgba(255, 255, 255, 0.832);
+    border-radius: 20px;
+    height: max-content;
+    border: 2px var(--text-color-primary) solid;
+}
+
+
+#main_header #main_header_content_back h1{
+    color: var(--text-color-primary);
+}
+
+#main_header #main_header_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+#main_header #main_header_image img{
+    width: inherit;
+}
+
+#main_header div{
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+#product{
+    margin-top: 100px;
+}
+
+#product h1{
+    color: var(--text-color-primary);
+    font-size: 50px;
+}
+
+#productsShow{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    gap: 50px;
+}
+
+.productItem{
+    cursor: pointer;
+    width: 270px;
+    padding: 25px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-secondary);
+}
+
+
+.productItem:hover{
+    box-shadow: 0 0 10px rgb(53, 32, 247);
+}
+
+.productItem:hover .pImg{
+    transform: scale(105%);
+    transition: 0.2s;
+}
+
+.productItem:not(:hover) .pImg{
+    transform: scale(1);
+    transition: 0.2s;
+}
+
+.productImg{
+    margin:10px;
+    width: 200px;
+    height: 200px;
+}
+
+.productImg img{
+    width: 200px;
+    height: 200px;
+}
+
+.productDetails{
+    padding: 10px;
+}
+
+.productDetails h1, p, h3, div, button{
+    margin: 10px 0;
+}
+
+.pDescription{
+    color: gray;
+}
+
+.productDetails h3{
+    font-size: 20px;
+}
+
+.productDetails .btn-addToCart{
+    padding: 5px 25px;
+    cursor: pointer;
+    background: var(--btn_bg-color);
+    font-size: 20px;
+    border: none;
+    color: white;    
+    transition: 0.3s;
+}
+
+.productDetails .btn-addToCart:hover{
+    padding: 5px 35px;
+}
+
+section#about{
+    background-color: rgb(241, 241, 241);
+    width: 100%;
+    margin-top: 100px;
+    padding: 30px;
+}
+
+#about h1{
+    color: var(--text-color-primary);
+    font-size: 50px;
+    padding: 20px 0;
+}
+
+#demonsProduct{
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#demonsProduct div{
+    width: 100%;
+    border-radius: 10px;
+    margin: 0;
+}
+
+#demonsPdescription{
+    background-color: white;
+    padding: 30px;
+    border: 1px black solid;
+    height: max-content;
+}
+
+#pimg{
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    padding: 5px;
+}
+
+#pimg img{
+    width: 100%;
+}
+
+#pimg #main{
+    border: 1px gray solid;
+    width: 100%;
+}
+
+#pimg #other{
+    width: fit-content;
+}
+
+#pimg #other ul{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+#pimg #main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#pimg #other ul li div {
+    border: 1px gray solid;
+    background: var(--btn_bg-color);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+#services{
+    padding: 100px 0;
+    width: 100%;
+}
+
+#services h1{
+    padding: 50px 20px;
+    font-size: xx-large;
+}
+
+#services h1 span#servicesH1Span{
+    color: var(--text-color-primary);
+}
+
+#servicesItems ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 10px 50px;
+}
+
+
+#servicesItems ul li{
+    display: flex;
+    flex-direction: column;
+}
+
+#servicesItems ul li i{
+    font-size: 70px;
+    color: var(--text-color-secondary);
+    margin: 15px;
+}
+
+
+#servicesItems ul li label{
+    color: var(--text-color-secondary);
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+footer{
+    box-shadow: var(--box-shadow-secondary);
+    background-image: url(../image/loging_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 0 30px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+footer h1{
+    color: var(--text-color-secondary);
+    margin: 10px;
+}
+
+
+footer div{
+    margin: 30px 0;
+    width: 100%;
+}
+
+
+footer div{
+    font-size: x-large;
+}
+
+
+footer div ul{
+    text-align: center;
+    padding: 20px;
+}
+
+footer #contact ul li i{
+    color: #ff52c8;
+}
+
+footer div ul li{
+    margin: 10px 0;
+}
+
+footer #followList ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+
+footer #followList ul li{
+    border: 1px black solid;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+footer #followList ul li a{
+    width: max-content;
+    height: max-content;
+    padding: 15px;
+}
+
+footer #followList ul li a:hover{
+    background-color: var(--text-color-secondary);
+    color: white;
+}
+
+footer #followList ul li a i{
+    font-size: 20px;
+}
+
+
+
+@media screen and (min-width: 1024PX) {
+
+    #main_header{
+        flex-direction: row;
+    }
+
+    #demonsProduct{
+        flex-direction: row;
+    }
+
+    #pimg{
+        flex-direction: row-reverse;
+    }
+
+
+    #pimg #other ul{
+        flex-direction: column;
+        height: 100%;
+    }
+
+        
+    #pimg #other ul li div {
+        width: 80px;
+        height: 80px;
+
+    }
+
+        
+    #servicesItems ul{
+        flex-direction: row;
+    }
+
+    #servicesItems ul li:nth-child(1){
+        transition-delay: 200ms;
+    }
+
+    #servicesItems ul li:nth-child(2){
+        transition-delay: 400ms;
+    }
+
+    #servicesItems ul li:nth-child(3){
+        transition-delay: 600ms;
+    }
+
+    footer h1{
+        font-size: 25px;
+    }
+
+    footer div ul li{
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 1023px) {
+
+    #main_header{
+        margin-top: 150px;
+        flex-direction: column-reverse;
+        background-position: right;
+        gap: 0px;
+    }
+    
+    #main_header #main_header_image{
+        padding: 20px;
+        position: absolute;
+        top: -100px;
+
+    }
+
+    #demonsProduct{
+        flex-direction: column;
+    }
+
+    #pimg{
+        flex-direction: column;
+    }
+        
+    #pimg #other{
+        width: 100%;
+    }
+
+    #pimg #other ul{
+        flex-direction: row;
+    }
+
+        
+    #pimg #other ul li div {
+        width: 80px;
+        height: 80px;
+
+    }
+
+    #pimg #main{
+        height: 300px;
+    }
+        
+    #servicesItems ul{
+        flex-direction: column;
+    }
+
+    
+    #servicesItems ul{
+        gap: 100px;
+    }
+
+    footer{
+        flex-direction: column;
+        font-size: xx-small;
+    }
+
+}
